@@ -26,6 +26,12 @@ public class NavidadController {
     }
 
     /* Métodos públicos*/
+    @GetMapping("/")
+    public String init(Model model) {
+        return initPoint(model);
+    }
+
+    /* Métodos públicos*/
     @GetMapping("/navidad")
     public String initPoint(Model model) {
         model.addAttribute("players", navidadService.recuperarJugadoresLibres());

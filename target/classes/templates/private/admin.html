@@ -26,12 +26,15 @@
         </span>
     </fieldset>
 </form>
-<form action="#" class="form-horizontal"
+<form action="#" class="form-horizontal pull-right"
       th:action="@{/private/players/reset}"
       method="post">
     <span class="pull-right">
             <input type="submit" id="resetButton" class="btn btn-warning" th:value="Reset" tabindex="0">
         </span>
+</form>
+<form th:action="@{/logout}"  method="post" class="form-horizontal pull-right">
+    <input type="submit" class="btn btn-danger" value="Sign Out"/>
 </form>
 
 <table class="table table-hover">
