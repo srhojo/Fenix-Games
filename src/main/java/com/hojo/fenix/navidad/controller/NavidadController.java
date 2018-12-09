@@ -40,9 +40,9 @@ public class NavidadController {
         JugarRequest request = new JugarRequest();
         request.setNombre(nombre);
 
-        //PlayerEntity jugador = navidadService.jugar(request.getNombre());
-        //request.setAsignado(jugador.getAsigandoA());
-        request.setAsignado("Marta");
+        PlayerEntity jugador = navidadService.jugar(request.getNombre());
+        request.setAsignado(jugador.getAsigandoA());
+        //request.setAsignado("Marta");
         return request;
     }
 

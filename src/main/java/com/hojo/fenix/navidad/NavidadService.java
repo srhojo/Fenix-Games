@@ -58,4 +58,14 @@ public class NavidadService {
         playerRepository.deleteById(id);
     }
 
+    public void resetearJuego(){
+        List<PlayerEntity> jugadores = playerRepository.findAll();
+        jugadores.forEach(p ->{
+            p.setAsigandoA(null);
+            p.setJuegado(Boolean.FALSE);
+            p.setFechaJugado(null);
+            playerRepository.save(p);
+        });
+    }
+
 }

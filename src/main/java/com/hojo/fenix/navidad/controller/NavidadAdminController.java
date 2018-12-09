@@ -43,6 +43,12 @@ public class NavidadAdminController {
         basiWebModel(model);
         return "private/admin";
     }
+    @RequestMapping(value = "/players/reset", method = RequestMethod.POST)
+    public String resetPlay(Model model){
+        navidadService.resetearJuego();
+        basiWebModel(model);
+        return "private/admin";
+    }
 
 
     private void basiWebModel(Model model) {
