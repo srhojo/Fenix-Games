@@ -1,0 +1,9 @@
+com/hojo/fenix/navidad/NavidadApplication.class
+com/hojo/fenix/navidad/entity/JugarRequest.class
+com/hojo/fenix/navidad/entity/Demo.class
+com/hojo/fenix/navidad/repository/PlayerRepository.class
+com/hojo/fenix/navidad/entity/Players.class
+com/hojo/fenix/navidad/entity/PlayerEntity.class
+com/hojo/fenix/navidad/controller/NavidadController.class
+com/hojo/fenix/navidad/NavidadService.class
+com/hojo/fenix/navidad/controller/NavidadAdminController.class
