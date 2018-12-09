@@ -10,9 +10,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 
-@EnableWebSecurity
+//@EnableWebSecurity
 @SpringBootApplication
-public class NavidadApplication extends WebSecurityConfigurerAdapter {
+public class NavidadApplication {
+
+// extends WebSecurityConfigurerAdapter {
 
     public static void main(String[] args) {
         SpringApplication.run(NavidadApplication.class, args);
@@ -25,7 +27,7 @@ public class NavidadApplication extends WebSecurityConfigurerAdapter {
     @Value("${navidad.admin.pwd}")
     private String pwd;
 
-    @Override
+   /* @Override
     protected void configure(AuthenticationManagerBuilder auth)
             throws Exception {
         auth
@@ -38,6 +40,7 @@ public class NavidadApplication extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        //http.authorizeRequests().anyRequest().authenticated().and().antMatcher("/navidad/**").httpBasic();
         http
                 .authorizeRequests().antMatchers("/private/**")
                 .authenticated()
@@ -47,6 +50,6 @@ public class NavidadApplication extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
-                .permitAll();;
-    }
+                .permitAll();
+    }*/
 }
