@@ -1,6 +1,6 @@
-package com.hojo.fenix.navidad.repository;
+package com.hojo.fenix.games.repository;
 
-import com.hojo.fenix.navidad.entity.PlayerEntity;
+import com.hojo.fenix.games.entity.PlayerEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

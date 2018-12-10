@@ -1,4 +1,4 @@
-package com.hojo.fenix.navidad.entity;
+package com.hojo.fenix.games.entity;
 
 public class Demo {
 

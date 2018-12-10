@@ -12,7 +12,7 @@ $(function () {
 
         $('#playButtonConfirm').on('click', function(){
 
-            $.post("/navidad/jugar/"+recipient).done(function(data){
+            $.post("/games/jugar/"+recipient).done(function(data){
                 console.log(data.asignado);
                 modal.modal('hide')
                 $("#playersView").removeClass("d-flex");

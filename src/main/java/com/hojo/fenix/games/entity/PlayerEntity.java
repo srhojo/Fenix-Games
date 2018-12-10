@@ -1,4 +1,4 @@
-package com.hojo.fenix.navidad.entity;
+package com.hojo.fenix.games.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;

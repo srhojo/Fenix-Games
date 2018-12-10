@@ -1,7 +1,7 @@
-package com.hojo.fenix.navidad.controller;
+package com.hojo.fenix.games.controller;
 
-import com.hojo.fenix.navidad.NavidadService;
-import com.hojo.fenix.navidad.entity.PlayerEntity;
+import com.hojo.fenix.games.NavidadService;
+import com.hojo.fenix.games.entity.PlayerEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

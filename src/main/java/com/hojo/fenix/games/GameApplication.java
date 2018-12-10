@@ -1,4 +1,4 @@
-package com.hojo.fenix.navidad;
+package com.hojo.fenix.games;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -7,15 +7,14 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 
-@EnableWebSecurity
+//@EnableWebSecurity
 @SpringBootApplication
-public class NavidadApplication extends WebSecurityConfigurerAdapter {
+public class GameApplication extends WebSecurityConfigurerAdapter {
 
     public static void main(String[] args) {
-        SpringApplication.run(NavidadApplication.class, args);
+        SpringApplication.run(GameApplication.class, args);
     }
 
 

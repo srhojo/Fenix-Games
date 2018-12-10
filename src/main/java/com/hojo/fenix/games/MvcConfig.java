@@ -1,4 +1,4 @@
-package com.hojo.fenix.navidad;
+package com.hojo.fenix.games;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
