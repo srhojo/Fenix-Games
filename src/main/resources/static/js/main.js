@@ -19,9 +19,26 @@ var vmNavbar = new Vue({
     }
 })
 
-var vmNavbar = new Vue({
+var vmGamesTable = new Vue({
     el: '#gamesTable',
-    data: {
-        games: games
-    }
+    data() {
+        return {
+            data: null,
+            loading: true,
+            arrored: false
+
+        }
+    },
+    mounted() {
+        axios
+            .get('http://localhost:8080/private/v1/games')
+            .then(response => {
+                this.data = response.data
+            })
+            .catch(error => {
+                console.log(error)
+                this.errored = true
+            })
+            .finally(() => this.loading = false)
+    },
 })

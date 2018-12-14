@@ -9,7 +9,6 @@ import javax.validation.constraints.Size;
 public class GameEntity {
 
     @Id
-    @Size(max = 10)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 

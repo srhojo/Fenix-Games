@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 public class PlayerEntity {
 
     @Id
-    @Size(max = 10)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 

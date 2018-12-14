@@ -18,23 +18,23 @@ public class GamesAdminController {
     @Autowired
     private GamesAdminServices gamesAdminServices;
 
-    @PostMapping()
+    @PostMapping("/players")
     public PlayerEntity createNewPlayer(@RequestBody @Valid PlayerEntity player) {
         return gamesAdminServices.savePlayer(player);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/players/{id}")
     public PlayerEntity updatePlayer(@PathVariable("id") Integer id, @RequestBody @Valid PlayerEntity player) {
         player.setId(id);
         return gamesAdminServices.savePlayer(player);
     }
 
-    @GetMapping()
+    @GetMapping("/players")
     public Players retrieveAllPlayers() {
         return gamesAdminServices.retrieveAllPlayers();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/players/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletePlayer(@PathVariable("id") Integer id) {
         gamesAdminServices.deletePlayer(id);
