@@ -1,11 +1,10 @@
 package com.hojo.fenix.games;
 
-import com.hojo.fenix.games.v2.dao.repository.GameRepository;
-import com.hojo.fenix.games.v2.dao.repository.PlayerRepository;
-import com.hojo.fenix.games.v2.domain.entity.GameEntity;
-import com.hojo.fenix.games.v2.domain.entity.PlayerEntity;
+import com.hojo.fenix.games.dao.repository.GameRepository;
+import com.hojo.fenix.games.dao.repository.PlayerRepository;
+import com.hojo.fenix.games.domain.entity.GameEntity;
+import com.hojo.fenix.games.domain.entity.PlayerEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

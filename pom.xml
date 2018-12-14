@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.hojo.fenix</groupId>
-	<artifactId>navidad</artifactId>
+	<artifactId>games</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>navidad</name>
-	<description>Demo project for Spring Boot</description>
+	<name>Fenix Games</name>
+	<description></description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
