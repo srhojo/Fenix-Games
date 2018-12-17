@@ -2,7 +2,9 @@ body {
     padding-top: 5rem;
 }
 
-.starter-template {
+#gamesTable table {
     padding: 3rem 1.5rem;
     text-align: center;
 }
+
+.top-buffer { margin-top:1rem; }
