@@ -13,6 +13,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/private/v1")
+@CrossOrigin(origins = "http://localhost:8000")
 public class GamesAdminController {
 
     @Autowired
