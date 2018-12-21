@@ -41,12 +41,14 @@
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Description" v-model="game.description">
                     </div>
-                    <button class="btn btn-primary" v-on:click="saveGame">Save</button>
-                    <button class="btn btn-warning">Update</button>
+                    <button class="btn btn-primary" v-on:click="saveGame" v-if="game.id===null" >Save</button>
+                    <button class="btn btn-primary" v-on:click="clearGameForm" v-if="game.id" >Clear</button>
+                    <button class="btn btn-warning" v-on:click="updateGame">Update</button>
+                    <button class="btn btn-danger" v-on:click="deleteGame" v-bind:class="{ disabled: game.id===null }" :disabled="game.id===null">Delete</button>
                 </div>
             </section>
             <section class="col-md-3 ml-md-auto text-right">
-                <button class="btn btn-success">Refresh</button>
+                <button class="btn btn-success" v-on:click="refreshGames">Refresh</button>
             </section>
         </div>
         <div class="row top-buffer">
@@ -66,10 +68,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="game in gamesList.games">
-                                <th>{{ game.id }}</th>
-                                <td>{{ game.name }}</td>
-                                <td>{{ game.description }}</td>
+                            <tr v-for="g in gamesList" v-on:click="selectedGame(g)">
+                                <th>{{ g.id }}</th>
+                                <td>{{ g.name }}</td>
+                                <td>{{ g.description }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -78,8 +80,6 @@
 
 
         </div>
-
-
     </main>
 
     <!-- development version, includes helpful console warnings -->
