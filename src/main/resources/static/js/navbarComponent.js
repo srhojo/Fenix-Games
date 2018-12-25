@@ -9,7 +9,7 @@ export default  {
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active" v-for="component in components">
-                        <a class="nav-link" href="#">{{ component.value }} <span class="sr-only">(current)</span></a>
+                        <router-link class="nav-link" :to="component.uri">{{ component.value }}</router-link>
                     </li>
                 </ul>
             </div>
