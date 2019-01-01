@@ -1,49 +1,55 @@
 import FgNavbar from './navbarComponent.js'
 import GamePage from './gamePageComponent.js'
+import PlayersPage from './playersPageComponent.js'
+import MatchesPage from "./matchesPageComponent.js";
 
 
 
-// 1. Define route components.
-// These can be imported from other files
-const Foo = GamePage;
-const Bar = { template: '<div>bar</div>' }
+const games = GamePage;
+const players = PlayersPage;
+const matches = MatchesPage;
 
-// 2. Define some routes
-// Each route should map to a component. The "component" can
-// either be an actual component constructor created via
-// `Vue.extend()`, or just a component options object.
-// We'll talk about nested routes later.
-const routes = [
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar }
+const routes = [{
+    path: '/',
+    redirect: '/games'
+  },
+  {
+    path: '/games',
+    component: games
+  },
+  {
+    path: '/players',
+    component: players
+  }, {
+    path: '/matches',
+    component: matches
+  }
 ]
 
-// 3. Create the router instance and pass the `routes` option
-// You can pass in additional options here, but let's
-// keep it simple for now.
 const router = new VueRouter({
   routes // short for `routes: routes`
 })
 
-// 4. Create and mount the root instance.
-// Make sure to inject the router with the router option to make the
-// whole app router-aware.
 const app = new Vue({
   router,
   components: {
     'fg-navbar': FgNavbar
   },
-data: {
+  data: {
     components: [{
-            id: 1,
-            value: 'Games',
-            uri: '/foo'
-        },
-        {
-            id: 2,
-            value: 'Players',
-            uri: '/bar'
-        }]
-}
+        id: 1,
+        value: 'Games',
+        uri: '/games'
+      },
+      {
+        id: 2,
+        value: 'Players',
+        uri: '/players'
+      }, {
+        id: 3,
+        value: 'Matches',
+        uri: '/matches'
+      }
+    ]
+  }
 }).$mount('#app')
-

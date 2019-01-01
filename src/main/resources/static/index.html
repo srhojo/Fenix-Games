@@ -22,6 +22,116 @@
         <router-view></router-view>
     </div>
 
+
+    <template id="gamePage-tamplate">
+        <main role="main" class="container-fluid" id="gamesPage">
+            <div class="row">
+                <section class="col-md-9">
+                    <div class="form-inline">
+                        <label class="sr-only" for="inlineFormInput">Name</label>
+                        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Game name"
+                            v-model="game.name">
+
+                        <label class="sr-only" for="inlineFormInputGroup">Description</label>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Description"
+                                v-model="game.description">
+                        </div>
+                        <button class="btn btn-primary" v-on:click="saveGame" v-if="game.id===null">Save</button>
+                        <button class="btn btn-primary" v-on:click="clearGameForm" v-if="game.id">Clear</button>
+                        <button class="btn btn-warning" v-on:click="updateGame">Update</button>
+                        <button class="btn btn-danger" v-on:click="deleteGame" v-bind:class="{ disabled: game.id===null }"
+                            :disabled="game.id===null">Delete</button>
+                    </div>
+                </section>
+                <section class="col-md-3 ml-md-auto text-right">
+                    <button class="btn btn-success" v-on:click="refreshGames">Refresh</button>
+                </section>
+            </div>
+            <div class="row top-buffer">
+                <section v-if="gamesListErrored">
+                    <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
+                </section>
+
+                <section v-else class="col-md-12">
+                    <div v-if="gamesListLoading">Loading...<i class="fa fa-spinner fa-spin" style="font-size:24px"></i></div>
+                    <div v-else>
+                        <table class="table table-hover starter-template">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="g in gamesList" v-on:click="selectedGame(g)">
+                                    <th>{{ g.id }}</th>
+                                    <td>{{ g.name }}</td>
+                                    <td>{{ g.description }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </template>
+
+    <template id="matchesPage-template">
+        <main role="main" class="container-fluid" id="matchesPage">
+            <div class="row">
+            </div>
+        </main>
+    </template>
+    <template id="playersPage-template">
+        <main role="main" class="container-fluid" id="playersPage">
+            <div class="row">
+                <section class="col-md-9">
+                    <div class="form-inline">
+                        <label class="sr-only" for="inlineFormInput">Name</label>
+                        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Player name"
+                            v-model="player.name">
+                        <button class="btn btn-primary" v-on:click="savePlayer" v-if="player.id===null">Save</button>
+                        <button class="btn btn-primary" v-on:click="clearPlayerForm()" v-if="player.id">Clear</button>
+                        <button class="btn btn-warning" v-on:click="">Update</button>
+                        <button class="btn btn-danger" v-on:click="" v-bind:class="{ disabled: player.id===null }"
+                            :disabled="player.id===null">Delete</button>
+                    </div>
+                </section>
+                <section class="col-md-3 ml-md-auto text-right">
+                    <button class="btn btn-success" v-on:click="">Refresh</button>
+                </section>
+            </div>
+            <div class="row top-buffer">
+                <section v-if="playerListErrored">
+                    <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
+                </section>
+
+                <section v-else class="col-md-12">
+                    <div v-if="playerListLoading">Loading...<i class="fa fa-spinner fa-spin" style="font-size:24px"></i></div>
+                    <div v-else>
+                        <table class="table table-hover starter-template">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Created at</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="p in playerList" v-on:click="selectedPlayer(p)">
+                                    <th>{{ p.id }}</th>
+                                    <td>{{ p.name }}</td>
+                                    <td>{{ p.createdDate }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </template>
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
